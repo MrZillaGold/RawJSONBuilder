@@ -66,7 +66,7 @@ export class RawJSONBuilder {
     }
 
     parse(text: string): RawJSONBuilder {
-        return new RawJSONBuilder(parser(text));
+        return new RawJSONBuilder(parser.parseString(text));
     }
 
     toJSON(): (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] }  {
