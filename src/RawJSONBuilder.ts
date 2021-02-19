@@ -5,7 +5,13 @@ export class RawJSONBuilder {
     message?: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
-    setText(text: IText): this {
+    setText(text: IText | string): this {
+        if (typeof text === "string") {
+            text = {
+                text
+            };
+        }
+
         this.message = text;
 
         return this;
