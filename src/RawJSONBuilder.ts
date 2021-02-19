@@ -60,3 +60,5 @@ export class RawJSONBuilder {
         return JSON.stringify(this.toJSON());
     }
 }
+
+export * from "./interfaces";

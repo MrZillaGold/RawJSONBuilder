@@ -1,9 +1,9 @@
 {
   "name": "rawjsonbuilder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minecraft Raw JSON text builder",
   "main": "./lib/RawJSONBuilder.js",
-  "types": "./lib/interfaces/index.d.ts",
+  "types": "./lib/RawJSONBuilder.d.ts",
   "scripts": {
     "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs"
   },
