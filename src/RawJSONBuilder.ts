@@ -10,7 +10,7 @@ export class RawJSONBuilder {
     message?: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
-    constructor({ extra, ...message }: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] }) {
+    constructor({ extra, ...message }: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra?: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] } = {}) {
         this.extra = extra || [];
         this.message = message;
     }
