@@ -1,9 +1,9 @@
 {
   "name": "rawjsonbuilder",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Minecraft Raw JSON text builder",
   "main": "./lib/RawJSONBuilder.js",
-  "types": "./lib/RawJSONBuilder.d.ts",
+  "types": "./lib/interfaces.d.ts",
   "scripts": {
     "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs"
   },
@@ -33,5 +33,8 @@
       "./lib/RawJSONBuilder.js"
     ],
     "./esm": "./esm/RawJSONBuilder.mjs"
+  },
+  "dependencies": {
+    "minecraft-protocol-chat-parser": "^3.0.2"
   }
 }

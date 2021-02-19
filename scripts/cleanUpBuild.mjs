@@ -14,3 +14,5 @@ fs.readdir(INTERFACES_DIR)
             }
         })
     });
+
+await fs.unlink(`${OUT_DIR}/interfaces.js`);

@@ -1,9 +1,19 @@
+// @ts-ignore
+import minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
+
 import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector } from "./interfaces";
+
+const parser = minecraftProtocolChatParser(735);
 
 export class RawJSONBuilder {
 
     message?: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
+
+    constructor({ extra, ...message }: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] }) {
+        this.extra = extra || [];
+        this.message = message;
+    }
 
     setText(text: IText | string): this {
         if (typeof text === "string") {
@@ -55,6 +65,10 @@ export class RawJSONBuilder {
         return this;
     }
 
+    parse(text: string): RawJSONBuilder {
+        return new RawJSONBuilder(parser(text));
+    }
+
     toJSON(): (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] }  {
         return {
             ...this.message,
@@ -66,5 +80,3 @@ export class RawJSONBuilder {
         return JSON.stringify(this.toJSON());
     }
 }
-
-export * from "./interfaces";
