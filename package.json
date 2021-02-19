@@ -1,0 +1,37 @@
+{
+  "name": "rawjsonbuilder",
+  "version": "1.0.0",
+  "description": "Minecraft Raw JSON text builder",
+  "main": "./lib/RawJSONBuilder.js",
+  "types": "./lib/interfaces/index.d.ts",
+  "scripts": {
+    "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs"
+  },
+  "keywords": [
+    "minecraft",
+    "json",
+    "raw"
+  ],
+  "author": "MrZillaGold <Pronin Egor | mrzillagold@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrZillaGold/RawJSONBuilder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MrZillaGold/RawJSONBuilder/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  },
+  "exports": {
+    ".": [
+      {
+        "require": "./lib/RawJSONBuilder.js",
+        "import": "./esm/RawJSONBuilder.mjs"
+      },
+      "./lib/RawJSONBuilder.js"
+    ],
+    "./esm": "./esm/RawJSONBuilder.mjs"
+  }
+}

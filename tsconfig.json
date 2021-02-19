@@ -1,0 +1,20 @@
+{
+  "include": [
+    "src"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "ES2020",
+      "dom",
+      "dom.iterable"
+    ],
+    "outDir": "lib",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "ES2020"
+  }
+}
