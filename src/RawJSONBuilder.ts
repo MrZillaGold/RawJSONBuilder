@@ -1,5 +1,5 @@
 // @ts-ignore
-import minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
+import * as minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
 
 import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector } from "./interfaces";
 
