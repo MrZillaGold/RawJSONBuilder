@@ -5,7 +5,7 @@
   📦 Minecraft <a href="https://minecraft.gamepedia.com/Raw_JSON_text_format">Raw JSON text</a> builder.
   <br>
   <br>
-  <a href="https://npmjs.com/package/discord.js-pages">
+  <a href="https://npmjs.com/package/rawjsonuilder">
     <img src="https://badge.fury.io/js/RawJSONBuilder.svg" alt="npm version" height="18">
   </a>
 </p>
