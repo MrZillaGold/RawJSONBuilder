@@ -69,10 +69,10 @@ export class RawJSONBuilder {
         return new RawJSONBuilder(parser.parseString(text));
     }
 
-    toJSON(): (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] }  {
+    toJSON(): (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] | undefined }  {
         return {
             ...this.message,
-            extra: this.extra
+            extra: this.extra.length ? this.extra : undefined
         };
     }
 
