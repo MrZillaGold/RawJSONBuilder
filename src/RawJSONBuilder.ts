@@ -33,34 +33,44 @@ export class RawJSONBuilder {
         return this;
     }
 
-    setScore(score: IScore) {
+    setScore(score: IScore): this {
         this.message = score;
 
         return this;
     }
 
-    setSelector(selector: ISelector) {
+    setSelector(selector: ISelector): this {
         this.message = selector;
 
         return this;
     }
 
-    setKeybind(keybind: IKeybind) {
+    setKeybind(keybind: IKeybind): this {
         this.message = keybind;
 
         return this;
     }
 
-    setNBT(NBT: NBT) {
+    setNBT(NBT: NBT): this {
         this.message = NBT;
 
         return this;
     }
 
-    setExtra(extra: RawJSONBuilder | RawJSONBuilder[]) {
+    setExtra(extra: RawJSONBuilder | RawJSONBuilder[]): this {
         extra = Array.isArray(extra) ? extra : [extra];
 
         this.extra = extra.map((element) => element.toJSON());
+
+        return this;
+    }
+
+    addExtra(extra: RawJSONBuilder | RawJSONBuilder[]): this {
+        extra = Array.isArray(extra) ? extra : [extra];
+
+        this.extra = extra
+            .map((element) => element.toJSON())
+            .concat(extra);
 
         return this;
     }
