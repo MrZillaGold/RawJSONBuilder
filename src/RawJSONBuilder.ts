@@ -27,7 +27,13 @@ export class RawJSONBuilder {
         return this;
     }
 
-    setTranslate(translate: ITranslate): this {
+    setTranslate(translate: ITranslate | string): this {
+        if (typeof translate === "string") {
+            translate = {
+                translate
+            };
+        }
+
         this.message = translate;
 
         return this;
