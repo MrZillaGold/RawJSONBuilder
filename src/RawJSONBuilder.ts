@@ -7,7 +7,7 @@ const parser = minecraftProtocolChatParser(735);
 
 export class RawJSONBuilder {
 
-    message?: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
+    message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
     constructor({ extra, ...message }: RawJSON = {}) {
@@ -68,7 +68,7 @@ export class RawJSONBuilder {
 
         this.extra = extra.map((element) => element.toJSON());
 
-        if (!this.message) {
+        if (!Object.keys(this.message).length) {
             this.setText("");
         }
 
