@@ -1,7 +1,7 @@
 // @ts-ignore
 import * as minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
 
-import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector } from "./interfaces";
+import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON } from "./interfaces";
 
 const parser = minecraftProtocolChatParser(735);
 
@@ -10,7 +10,7 @@ export class RawJSONBuilder {
     message?: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
-    constructor({ extra, ...message }: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra?: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] } = {}) {
+    constructor({ extra, ...message }: RawJSON = {}) {
         this.extra = extra || [];
         this.message = message;
     }
@@ -68,6 +68,10 @@ export class RawJSONBuilder {
 
         this.extra = extra.map((element) => element.toJSON());
 
+        if (!this.message) {
+            this.setText("");
+        }
+
         return this;
     }
 
@@ -85,10 +89,13 @@ export class RawJSONBuilder {
         return new RawJSONBuilder(parser.parseString(text));
     }
 
-    toJSON(): (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector) & { extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] | undefined }  {
+    toJSON(): RawJSON {
         return {
             ...this.message,
-            extra: this.extra.length ? this.extra : undefined
+            extra: this.extra.length ?
+                this.extra
+                :
+                undefined
         };
     }
 
