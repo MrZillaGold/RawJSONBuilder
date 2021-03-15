@@ -78,9 +78,10 @@ export class RawJSONBuilder {
     addExtra(extra: RawJSONBuilder | RawJSONBuilder[]): this {
         extra = Array.isArray(extra) ? extra : [extra];
 
-        this.extra = extra
-            .map((element) => element.toJSON())
-            .concat(extra);
+        this.extra = this.extra
+            .concat(
+                extra.map((element) => element.toJSON())
+            );
 
         if (!Object.keys(this.message).length) {
             this.setText("");
