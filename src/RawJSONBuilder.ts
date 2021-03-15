@@ -10,7 +10,13 @@ export class RawJSONBuilder {
     message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
-    constructor({ extra, ...message }: RawJSON = {}) {
+    constructor(rawJSON: RawJSON = {}) {
+        if (rawJSON instanceof RawJSONBuilder) {
+            rawJSON = rawJSON.toJSON();
+        }
+
+        const { extra, ...message } = rawJSON;
+
         this.extra = extra || [];
         this.message = message;
     }
