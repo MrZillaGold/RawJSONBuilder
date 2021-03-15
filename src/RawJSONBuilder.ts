@@ -82,6 +82,10 @@ export class RawJSONBuilder {
             .map((element) => element.toJSON())
             .concat(extra);
 
+        if (!Object.keys(this.message).length) {
+            this.setText("");
+        }
+
         return this;
     }
 
