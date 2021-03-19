@@ -1,5 +1,4 @@
 import { RawJSONBuilder } from "../RawJSONBuilder";
-import { IText } from "./text";
 import { IClickEvent } from "./clickEvent";
 
 export interface IHoverEvent extends IClickEvent {
@@ -8,8 +7,8 @@ export interface IHoverEvent extends IClickEvent {
 
 export interface IShowTextHoverEvent {
     action: "show_text";
-    value?: IText;
-    contents?: IText;
+    value?: RawJSONBuilder;
+    contents?: RawJSONBuilder;
 }
 
 export interface IShowItemHoverEvent {
