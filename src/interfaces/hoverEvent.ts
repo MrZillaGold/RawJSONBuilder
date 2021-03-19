@@ -1,33 +1,37 @@
+import { RawJSONBuilder } from "../RawJSONBuilder";
 import { IText } from "./text";
 import { IClickEvent } from "./clickEvent";
 
 export interface IHoverEvent extends IClickEvent {
-    hoverEvent?: {
-        action: "show_text" | "show_item" | "show_entity";
-        /**
-         * @deprecated Deprecated, use contents instead.
-         */
-        value?: {
-            show_text?: IText;
-            show_item?: string;
-            show_entity?: {
-                name?: string;
-                type?: string;
-                id?: string;
-            }
-        }
-        contents?: {
-            show_text?: string | IText | (string | IText)[];
-            show_item?: {
-                id: string;
-                count: number;
-                tag?: string;
-            }
-            show_entity?: {
-                name?: IText;
-                type: string;
-                id: string;
-            }
-        }
-    }
+    hoverEvent?: IShowTextHoverEvent | IShowItemHoverEvent | IShowEntityHoverEvent;
+}
+
+export interface IShowTextHoverEvent {
+    action: "show_text";
+    value?: IText;
+    contents?: IText;
+}
+
+export interface IShowItemHoverEvent {
+    action: "show_item";
+    value?: string;
+    contents?: {
+        id: string;
+        count: number;
+        tag?: string;
+    };
+}
+
+export interface IShowEntityHoverEvent {
+    action?: "show_entity";
+    value?: {
+        name?: RawJSONBuilder;
+        type?: string;
+        id?: string;
+    };
+    contents?: {
+        name?: RawJSONBuilder;
+        type: string;
+        id: string;
+    };
 }
