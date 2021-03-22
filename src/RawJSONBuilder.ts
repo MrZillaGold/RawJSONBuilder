@@ -10,9 +10,15 @@ export class RawJSONBuilder {
     message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
 
-    constructor(rawJSON: RawJSON = {}) {
+    constructor(rawJSON: RawJSON | string = {}) {
         if (rawJSON instanceof RawJSONBuilder) {
             rawJSON = rawJSON.toJSON();
+        } else if (typeof rawJSON === "string") {
+            try {
+                rawJSON = JSON.parse(rawJSON) as RawJSON;
+            } catch {
+                throw new Error("Invalid JSON string!");
+            }
         }
 
         const { extra, ...message } = rawJSON;
@@ -112,5 +118,11 @@ export class RawJSONBuilder {
 
     toString(): string {
         return JSON.stringify(this.toJSON());
+    }
+
+    toRawString(): string {
+        return parser.parseJSON(
+            this.toJSON()
+        );
     }
 }
