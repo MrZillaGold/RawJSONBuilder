@@ -1,6 +1,6 @@
-import { IText } from "./text";
+import { RawJSONBuilder } from "../RawJSONBuilder";
 
 export interface ITranslate {
     translate: string;
-    with?: IText[];
+    with?: RawJSONBuilder[];
 }
