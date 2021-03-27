@@ -63,7 +63,13 @@ export class RawJSONBuilder {
         return this;
     }
 
-    setKeybind(keybind: IKeybind): this {
+    setKeybind(keybind: IKeybind | string): this {
+        if (typeof keybind === "string") {
+            keybind = {
+                keybind
+            };
+        }
+
         this.message = keybind;
 
         return this;
