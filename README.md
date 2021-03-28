@@ -10,6 +10,9 @@
   </a>
 </p>
 
+| 📖 [Documentation](docs/methods.md) |
+| ----------------------------------- |
+
 ### Install 📦
 `npm i rawjsonbuilder`
 
