@@ -51,19 +51,31 @@ export class RawJSONBuilder {
         return this;
     }
 
-    setScore(score: IScore): this {
+    setScore(score: IScore | IScore["score"]): this {
+        if (!("score" in score)) {
+            score = {
+                score
+            };
+        }
+
         this.message = score;
 
         return this;
     }
 
-    setSelector(selector: ISelector): this {
+    setSelector(selector: ISelector | ISelector["selector"]): this {
+        if (typeof selector === "string") {
+            selector = {
+                selector
+            };
+        }
+
         this.message = selector;
 
         return this;
     }
 
-    setKeybind(keybind: IKeybind | string): this {
+    setKeybind(keybind: IKeybind | IKeybind["keybind"]): this {
         if (typeof keybind === "string") {
             keybind = {
                 keybind
