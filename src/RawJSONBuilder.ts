@@ -134,7 +134,7 @@ export class RawJSONBuilder {
         };
     }
 
-    toString(): string {
+    [Symbol.toStringTag](): string {
         return JSON.stringify(this.toJSON());
     }
 
