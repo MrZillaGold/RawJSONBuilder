@@ -73,9 +73,9 @@ const builder = new RawJSONBuilder("{\"text\": \"§7§lHello World!\"}");
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param | Type                                         | Description |
-| ----- | -------------------------------------------- | ----------- |
-| text  | `string` [`Text`](src/interfaces/text.ts#L3) | Text to set |
+| Param | Type                                          | Description |
+| ----- | --------------------------------------------- | ----------- |
+| text  | `string` [`Text`](/src/interfaces/text.ts#L3) | Text to set |
 
 **Example**:
 
@@ -98,9 +98,9 @@ builder.setText({
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param      | Type                                                   | Description      |
-| ---------- | ------------------------------------------------------ | ---------------- |
-| translate  | `string` [`Translate`](src/interfaces/translate.ts#L3) | Translate to set |
+| Param      | Type                                                    | Description      |
+| ---------- | ------------------------------------------------------- | ---------------- |
+| translate  | `string` [`Translate`](/src/interfaces/translate.ts#L3) | Translate to set |
 
 **Example**:
 
@@ -133,9 +133,9 @@ builder.setTranslate({
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param  | Type                                                   | Description  |
-| ------ | ------------------------------------------------------ | ------------ |
-| score  | [`Score`](src/interfaces/score.ts#L1) `Score["score"]` | Score to set |
+| Param  | Type                                                    | Description  |
+| ------ | ------------------------------------------------------- | ------------ |
+| score  | [`Score`](/src/interfaces/score.ts#L1) `Score["score"]` | Score to set |
 
 **Example**:
 
@@ -164,9 +164,9 @@ builder.setScore({
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param     | Type                                                 | Description     |
-| --------- | ---------------------------------------------------- | --------------- |
-| selector  | `string` [`Selector`](src/interfaces/selector.ts#L1) | Selector to set |
+| Param     | Type                                                  | Description     |
+| --------- | ----------------------------------------------------- | --------------- |
+| selector  | `string` [`Selector`](/src/interfaces/selector.ts#L1) | Selector to set |
 
 **Example**:
 
@@ -187,9 +187,9 @@ builder.setSelector({
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param    | Type                                               | Description    |
-| -------- | -------------------------------------------------- | -------------- |
-| keybind  | `string` [`Keybind`](src/interfaces/keybind.ts#L1) | Keybind to set |
+| Param    | Type                                                | Description    |
+| -------- | --------------------------------------------------- | -------------- |
+| keybind  | `string` [`Keybind`](/src/interfaces/keybind.ts#L1) | Keybind to set |
 
 **Example**:
 
@@ -210,9 +210,9 @@ builder.setKeybind({
 
 **Returns**: `this` - Current RawJSONBuilder context
 
-| Param | Type                              | Description |
-| ----- | --------------------------------- | ----------- |
-| NBT   | [`NBT`](src/interfaces/NBT.ts#L1) | NBT to set  |
+| Param | Type                               | Description |
+| ----- | ---------------------------------- | ----------- |
+| NBT   | [`NBT`](/src/interfaces/NBT.ts#L1) | NBT to set  |
 
 **Example**:
 
@@ -312,12 +312,12 @@ builder.parse("§6Hello §lworld!")
 
 <a name="toJSON"></a>
 
-## toJSON() ⇒ [`RawJSON`](src/interfaces.ts#L9);
+## toJSON() ⇒ [`RawJSON`](/src/interfaces.ts#L9);
 Build RawJSONBuilder to RawJSON
 
 **Kind**: global function
 
-**Returns**: [`RawJSON`](src/interfaces.ts#L9) - RawJSON
+**Returns**: [`RawJSON`](/src/interfaces.ts#L9) - RawJSON
 
 **Example**:
 
