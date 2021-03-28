@@ -100,7 +100,7 @@ builder.setText({
 
 | Param      | Type                                                   | Description      |
 | ---------- | ------------------------------------------------------ | ---------------- |
-| translate  | `string` [`Translate`](src/interfaces/translate.ts#L3) | Translate to set |
+| translate  | `string` [`Translate`](/src/interfaces/translate.ts#L3) | Translate to set |
 
 **Example**:
 
