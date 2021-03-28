@@ -5,7 +5,9 @@
   "main": "./lib/RawJSONBuilder.js",
   "types": "./lib/interfaces.d.ts",
   "scripts": {
-    "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs"
+    "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs",
+    "pretest": "npm run-script build",
+    "test": "mocha --reporter spec"
   },
   "keywords": [
     "minecraft",
@@ -21,7 +23,11 @@
   "bugs": {
     "url": "https://github.com/MrZillaGold/RawJSONBuilder/issues"
   },
+  "dependencies": {
+    "minecraft-protocol-chat-parser": "^3.0.2"
+  },
   "devDependencies": {
+    "mocha": "^8.3.2",
     "typescript": "^4.1.5"
   },
   "exports": {
@@ -33,8 +39,5 @@
       "./lib/RawJSONBuilder.js"
     ],
     "./esm": "./esm/RawJSONBuilder.mjs"
-  },
-  "dependencies": {
-    "minecraft-protocol-chat-parser": "^3.0.2"
   }
 }

@@ -2,5 +2,6 @@
 .idea
 scripts
 docs
+test
 src
 tsconfig.json
