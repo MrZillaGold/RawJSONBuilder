@@ -39,7 +39,7 @@ export class RawJSONBuilder {
         return this;
     }
 
-    setTranslate(translate: ITranslate | string): this {
+    setTranslate(translate: ITranslate | ITranslate["translate"]): this {
         if (typeof translate === "string") {
             translate = {
                 translate
