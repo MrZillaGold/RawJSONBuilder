@@ -173,7 +173,7 @@ export class RawJSONBuilder {
     /**
      * Build RawJSONBuilder to RawJSON string
      */
-    [Symbol.toStringTag](): string {
+    toString(): string {
         return JSON.stringify(this.toJSON());
     }
 
