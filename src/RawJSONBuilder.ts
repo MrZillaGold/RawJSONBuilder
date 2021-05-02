@@ -1,16 +1,16 @@
 // @ts-ignore
 import * as minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
 
-import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON } from "./interfaces";
+import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON, RawJSONBuilderOptions } from "./interfaces";
 
 const parser = minecraftProtocolChatParser(735);
 
 export class RawJSONBuilder {
 
-    message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
-    extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[] = [];
+    private message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
+    private extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector | string)[] = [];
 
-    constructor(rawJSON: RawJSON | string = {}) {
+    constructor(rawJSON: RawJSONBuilderOptions | string = {}) {
         if (rawJSON instanceof RawJSONBuilder) {
             rawJSON = rawJSON.toJSON();
         } else if (typeof rawJSON === "string") {
@@ -120,14 +120,16 @@ export class RawJSONBuilder {
     /**
      * Set Extra
      */
-    setExtra(extra: RawJSONBuilder | RawJSONBuilder[]): this {
-        extra = Array.isArray(extra) ? extra : [extra];
+    setExtra(extra: string | string[] | RawJSONBuilder | RawJSONBuilder[]): this {
+        const extraArray = Array.isArray(extra) ? extra : [extra];
 
-        this.extra = extra.map((element) => element.toJSON());
+        this.extra = extraArray.map((element) => {
+            if (element instanceof RawJSONBuilder) {
+                return element.toJSON();
+            }
 
-        if (!Object.keys(this.message).length) {
-            this.setText("");
-        }
+            return element;
+        });
 
         return this;
     }
@@ -135,17 +137,19 @@ export class RawJSONBuilder {
     /**
      * Add Extra
      */
-    addExtra(extra: RawJSONBuilder | RawJSONBuilder[]): this {
-        extra = Array.isArray(extra) ? extra : [extra];
+    addExtra(extra: string | string[] | RawJSONBuilder | RawJSONBuilder[]): this {
+        const extraArray = Array.isArray(extra) ? extra : [extra];
 
         this.extra = this.extra
             .concat(
-                extra.map((element) => element.toJSON())
-            );
+                extraArray.map((element) => {
+                    if (element instanceof RawJSONBuilder) {
+                        return element.toJSON()
+                    }
 
-        if (!Object.keys(this.message).length) {
-            this.setText("");
-        }
+                    return element;
+                })
+            );
 
         return this;
     }
@@ -161,8 +165,12 @@ export class RawJSONBuilder {
      * Build RawJSONBuilder to RawJSON
      */
     toJSON(): RawJSON {
+        if (!("text" in this.message)) {
+            this.setText("");
+        }
+
         return {
-            ...this.message,
+            ...this.message as RawJSON,
             extra: this.extra.length ?
                 this.extra
                 :

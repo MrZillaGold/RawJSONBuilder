@@ -6,8 +6,8 @@ import { NBT } from "./interfaces/nbt";
 import { IScore } from "./interfaces/score";
 import { ISelector } from "./interfaces/selector";
 
-export type RawJSON = {
-    extra?: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector)[]
+export type RawJSONBuilderOptions = {
+    extra?: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector | string)[]
 } & (
     IText
     | ITranslate
@@ -17,6 +17,8 @@ export type RawJSON = {
     | IScore
     | ISelector
     );
+
+export type RawJSON = RawJSONBuilderOptions & IText;
 
 export * from "./interfaces/text";
 export * from "./interfaces/translate";
