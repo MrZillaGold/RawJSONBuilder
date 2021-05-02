@@ -144,7 +144,7 @@ export class RawJSONBuilder {
             .concat(
                 extraArray.map((element) => {
                     if (element instanceof RawJSONBuilder) {
-                        return element.toJSON()
+                        return element.toJSON();
                     }
 
                     return element;

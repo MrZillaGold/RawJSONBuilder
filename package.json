@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc && node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs",
     "pretest": "npm run-script build",
-    "test": "mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "eslint:check": "eslint ./src/**/*",
+    "eslint:fix": "eslint ./src/**/* --fix"
   },
   "keywords": [
     "minecraft",
@@ -27,6 +29,9 @@
     "minecraft-protocol-chat-parser": "^3.0.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.22.0",
     "mocha": "^8.3.2",
     "typescript": "^4.1.5"
   },
