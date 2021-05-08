@@ -166,8 +166,8 @@ export class RawJSONBuilder {
      * Build RawJSONBuilder to RawJSON
      */
     toJSON(): RawJSON {
-        if (!("text" in this.message)) {
-            (this.message as IText).text = "";
+        if (!Object.entries(this.message).length) {
+            this.setText("");
         }
 
         return {
