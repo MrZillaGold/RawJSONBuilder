@@ -10,7 +10,7 @@ export class RawJSONBuilder {
     private message: IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector;
     private extra: (IText | ITranslate | IClickEvent | IKeybind | NBT | IScore | ISelector | string)[] = [];
 
-    constructor(rawJSON: RawJSONBuilderOptions | string = {}) {
+    constructor(rawJSON: RawJSONBuilderOptions | RawJSONBuilder | string = {}) {
         if (rawJSON instanceof RawJSONBuilder) {
             rawJSON = rawJSON.toJSON();
         } else if (typeof rawJSON === "string") {
@@ -166,7 +166,7 @@ export class RawJSONBuilder {
      */
     toJSON(): RawJSON {
         if (!("text" in this.message)) {
-            this.setText("");
+            (this.message as IText).text = "";
         }
 
         return {
