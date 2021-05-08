@@ -18,7 +18,7 @@ export type RawJSONBuilderOptions = {
     | ISelector
     );
 
-export type RawJSON = RawJSONBuilderOptions & IText;
+export type RawJSON = RawJSONBuilderOptions;
 
 export * from "./interfaces/text";
 export * from "./interfaces/translate";
