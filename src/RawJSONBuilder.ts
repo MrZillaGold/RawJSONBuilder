@@ -1,5 +1,6 @@
 // @ts-ignore
 import * as minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
+import { inspectable } from "inspectable";
 
 import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON, RawJSONBuilderOptions } from "./interfaces";
 
@@ -193,4 +194,15 @@ export class RawJSONBuilder {
             this.toJSON()
         );
     }
+
+    [Symbol("serializeData")](): RawJSON {
+        return this.toJSON();
+    }
 }
+
+inspectable(RawJSONBuilder, {
+    serialize: (instance) => instance.toJSON(),
+    stringify: (instance, payload, context): string => (
+        `${context.stylize(instance.constructor.name, "special")} ${context.inspect(payload)}`
+    )
+});

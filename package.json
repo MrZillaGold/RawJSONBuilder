@@ -1,6 +1,6 @@
 {
   "name": "rawjsonbuilder",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "Minecraft Raw JSON text builder",
   "main": "./lib/RawJSONBuilder.js",
   "types": "./lib/interfaces.d.ts",
@@ -27,9 +27,11 @@
     "url": "https://github.com/MrZillaGold/RawJSONBuilder/issues"
   },
   "dependencies": {
+    "inspectable": "^1.1.1",
     "minecraft-protocol-chat-parser": "^3.0.2"
   },
   "devDependencies": {
+    "@types/node": "^15.0.2",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.22.0",
