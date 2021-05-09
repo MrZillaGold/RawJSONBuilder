@@ -6,7 +6,6 @@
   "types": "./lib/interfaces.d.ts",
   "scripts": {
     "build": "tsc",
-    "postbuild": "node --experimental-modules --es-module-specifier-resolution=node scripts/cleanUpBuild.mjs",
     "pretest": "npm run-script build",
     "test": "mocha --reporter spec",
     "eslint:check": "eslint ./src/**/*",

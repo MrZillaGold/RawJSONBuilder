@@ -2,7 +2,7 @@
 import * as minecraftProtocolChatParser from "minecraft-protocol-chat-parser";
 import { inspectable } from "inspectable";
 
-import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON, RawJSONBuilderOptions } from "./interfaces";
+import { IKeybind, ITranslate, IClickEvent, NBT, IText, IScore, ISelector, RawJSON, RawJSONBuilderOptions, HoverAction, ClickAction, Color } from "./interfaces";
 
 const parser = minecraftProtocolChatParser(735);
 
@@ -206,3 +206,9 @@ inspectable(RawJSONBuilder, {
         `${context.stylize(instance.constructor.name, "special")} ${context.inspect(payload)}`
     )
 });
+
+export {
+    Color,
+    HoverAction,
+    ClickAction
+};

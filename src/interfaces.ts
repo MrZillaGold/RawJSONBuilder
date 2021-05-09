@@ -29,4 +29,5 @@ export * from "./interfaces/clickEvent";
 export * from "./interfaces/formatting";
 export * from "./interfaces/nbt";
 export * from "./interfaces/hoverEvent";
-export * from "./RawJSONBuilder";
+
+export { RawJSONBuilder } from "./RawJSONBuilder";

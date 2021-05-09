@@ -1,18 +1,24 @@
 import { RawJSONBuilder } from "../RawJSONBuilder";
 import { IClickEvent } from "./clickEvent";
 
+export enum HoverAction {
+    SHOW_TEXT = "show_text",
+    SHOW_ITEM = "show_item",
+    SHOW_ENTITY = "show_entity"
+}
+
 export interface IHoverEvent extends IClickEvent {
     hoverEvent?: IShowTextHoverEvent | IShowItemHoverEvent | IShowEntityHoverEvent;
 }
 
 export interface IShowTextHoverEvent {
-    action: "show_text";
+    action: HoverAction.SHOW_TEXT | "show_text";
     value?: RawJSONBuilder;
     contents?: RawJSONBuilder;
 }
 
 export interface IShowItemHoverEvent {
-    action: "show_item";
+    action: HoverAction.SHOW_ITEM | "show_item";
     value?: string;
     contents?: {
         id: string;
@@ -22,7 +28,7 @@ export interface IShowItemHoverEvent {
 }
 
 export interface IShowEntityHoverEvent {
-    action?: "show_entity";
+    action?: HoverAction.SHOW_ENTITY | "show_entity";
     value?: {
         name?: RawJSONBuilder;
         type?: string;
