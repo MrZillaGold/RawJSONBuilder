@@ -10,7 +10,7 @@
   </a>
 </p>
 
-| 📖 [Documentation](https://mrzillagold.github.io/RawJSONBuilder/) |
+| 📖 [Documentation](https://mrzillagold.github.io/RawJSONBuilder/index.html) |
 | ---------------------------------------------------------------- |
 
 ### Install 📦
