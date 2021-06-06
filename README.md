@@ -10,23 +10,27 @@
   </a>
 </p>
 
-| 📖 [Documentation](docs/methods.md) |
-| ----------------------------------- |
+| 📖 [Documentation](https://mrzillagold.github.io/RawJSONBuilder/) |
+| ---------------------------------------------------------------- |
 
 ### Install 📦
 `npm i rawjsonbuilder`
 
 ## Usage 🔧
 ```js
-import { RawJSONBuilder } from "rawjsonbuilder"; // ESM
+import { text, TextComponent } from "rawjsonbuilder"; // ESM
 // OR
-const { RawJSONBuilder } = require("rawjsonbuilder"); // CommonJS
+const { text, TextComponent } = require("rawjsonbuilder"); // CommonJS
 
-const rawJSONBuilder = new RawJSONBuilder();
+text("Hello World!", "black")
+    .toRawString(); // §0Hello World!
 
-rawJSONBuilder.setText({ 
-    text: "Hello World!",
-    color: "black"
-})
-    .toJSON();
+const builder = new TextComponent()
+    .setText("Hello World!")
+    .setBold()
+    .addSpace()
+    .addExtra(
+        text("Nice to meet you!", "red")
+    )
+    .toRawString(); // §lHello World! §cNice to meet you!
 ```

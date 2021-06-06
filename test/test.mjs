@@ -1,33 +1,25 @@
 import assert from "assert";
 
-import { RawJSONBuilder } from "../lib/RawJSONBuilder.js";
+import { text, TextComponent } from "../lib/index.js";
 
 describe("RawJSONBuilder", () => {
     it("Build RawJSON to string and check match", () => {
-        const rawString = new RawJSONBuilder()
+        const rawString = new TextComponent()
             .setText("§1§lLorem§r §2ipsum")
-            .setExtra(
-                new RawJSONBuilder()
-                    .setText("dolor sit amet,")
+            .addExtra(
+                text("dolor sit amet,")
             )
-            .setExtra(
-                new RawJSONBuilder()
-                    .setText({
-                        text: "consectetur adipiscing elit.",
-                        color: "black",
-                        bold: true
-                    })
+            .addExtra(
+                text("consectetur adipiscing elit.", "black")
+                    .setBold()
             )
+            .clearExtra()
             .addExtra([
-                new RawJSONBuilder()
-                    .setText({
-                        text: "Etiam ullamcorper magna augue",
-                        color: "black",
-                        italic: true
-                    })
+                text("Etiam ullamcorper magna augue", "black")
+                    .setItalic()
             ])
             .toRawString();
 
-        assert.strictEqual(rawString, "§1§lLorem§r §2ipsum§0§lconsectetur adipiscing elit.§0§oEtiam ullamcorper magna augue");
+        assert.strictEqual(rawString, "§1§lLorem§r §2ipsum§0§oEtiam ullamcorper magna augue");
     });
 });

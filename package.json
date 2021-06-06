@@ -1,15 +1,26 @@
 {
   "name": "rawjsonbuilder",
-  "version": "1.1.18",
+  "version": "2.0.0",
   "description": "Minecraft Raw JSON text builder",
-  "main": "./lib/RawJSONBuilder.js",
-  "types": "./lib/interfaces.d.ts",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "pretest": "npm run-script build",
     "test": "mocha --reporter spec",
+    "docs": "typedoc --out docs src/index.ts --theme minimal",
     "eslint:check": "eslint ./src/**/*",
     "eslint:fix": "eslint ./src/**/* --fix"
+  },
+  "exports": {
+    ".": [
+      {
+        "require": "./lib/index.js",
+        "import": "./esm/index.mjs"
+      },
+      "./lib/index.js"
+    ],
+    "./esm": "./esm/index.mjs"
   },
   "keywords": [
     "minecraft",
@@ -35,16 +46,7 @@
     "@typescript-eslint/parser": "^4.17.0",
     "eslint": "^7.22.0",
     "mocha": "^8.3.2",
+    "typedoc": "^0.20.36",
     "typescript": "^4.1.5"
-  },
-  "exports": {
-    ".": [
-      {
-        "require": "./lib/RawJSONBuilder.js",
-        "import": "./esm/RawJSONBuilder.mjs"
-      },
-      "./lib/RawJSONBuilder.js"
-    ],
-    "./esm": "./esm/RawJSONBuilder.mjs"
   }
 }
