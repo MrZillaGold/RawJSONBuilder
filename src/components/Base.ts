@@ -25,24 +25,7 @@ export enum Color {
     RESET = "reset"
 }
 
-export type ColorUnion =
-    "black"
-    | "dark_blue"
-    | "dark_green"
-    | "dark_aqua"
-    | "dark_red"
-    | "dark_purple"
-    | "gold"
-    | "gray"
-    | "dark_gray"
-    | "blue"
-    | "green"
-    | "aqua"
-    | "red"
-    | "light_purple"
-    | "yellow"
-    | "white"
-    | "reset";
+export type ColorUnion = `${Color}`;
 
 export enum ColorCode {
     BLACK = "§0",
@@ -82,7 +65,7 @@ export enum ClickAction {
     COPY_TO_CLIPBOARD = "copy_to_clipboard"
 }
 
-export type ClickActionUnion = "open_url" | "open_file" | "run_command" | "suggest_command" | "change_page" | "copy_to_clipboard";
+export type ClickActionUnion = `${ClickAction}`;
 
 export interface IClickEvent {
     action: ClickAction | ClickActionUnion;
@@ -97,7 +80,7 @@ export enum HoverAction {
     SHOW_ENTITY = "show_entity"
 }
 
-export type HoverActionUnion = "show_text" | "show_item" | "show_entity";
+export type HoverActionUnion = `${HoverAction}`;
 
 export interface IShowTextHoverEvent {
     action: HoverAction.SHOW_TEXT | "show_text";

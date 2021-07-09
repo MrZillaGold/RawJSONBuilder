@@ -1,4 +1,4 @@
-import {ComponentsUnion, parser, RawComponentsUnion} from "./components";
+import { ComponentsUnion, parser, RawComponentsUnion } from "./components";
 
 export type RawJSON = ComponentsUnion | RawComponentsUnion;
 
