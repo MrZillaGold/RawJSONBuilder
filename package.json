@@ -1,6 +1,6 @@
 {
   "name": "rawjsonbuilder",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Minecraft Raw JSON text builder",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

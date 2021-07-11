@@ -23,5 +23,6 @@ export const {
     score,
     keybind,
     selector,
-    translate
+    translate,
+    parser
 } = RawJSONBuilder;
