@@ -16,5 +16,12 @@ export const {
     ColorCode,
     HoverAction,
     ClickAction,
-    Component
+    Component,
+
+    nbt,
+    text,
+    score,
+    keybind,
+    selector,
+    translate
 } = RawJSONBuilder;
