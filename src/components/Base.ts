@@ -134,7 +134,7 @@ export class BaseComponent {
 
     hoverEvent?: IShowTextHoverEvent | IShowItemHoverEvent | IShowEntityHoverEvent = undefined;
 
-    extra: (RawJSON | string)[] = [];
+    extra?: (RawJSON | string)[];
 
     constructor(component?: BaseComponent | RawBaseComponent | string) {
         this.setup(component);
@@ -403,6 +403,10 @@ export class BaseComponent {
      * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     addExtra(extra: Exclude<BaseComponent["extra"], undefined> | Exclude<BaseComponent["extra"], undefined>[number]): this {
+        if (!this.extra) {
+            this.extra = [];
+        }
+
         this.extra = this.extra.concat(extra);
 
         return this;
@@ -414,7 +418,7 @@ export class BaseComponent {
      * @return Current component context
      */
     clearExtra(): this {
-        this.extra = [];
+        delete this.extra;
 
         return this;
     }
