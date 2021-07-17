@@ -24,5 +24,6 @@ export const {
     keybind,
     selector,
     translate,
+    parse,
     parser
 } = RawJSONBuilder;
