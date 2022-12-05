@@ -41,7 +41,7 @@
     "minecraft-protocol-chat-parser": "^3.0.2"
   },
   "devDependencies": {
-    "@types/node": "^17.0.7",
+    "@types/node": "^18.11.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.0",
