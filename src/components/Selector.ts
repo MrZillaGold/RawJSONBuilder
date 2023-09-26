@@ -22,7 +22,7 @@ export class SelectorComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Entity_Names | Entity Names}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Entity_Names | Entity Names}
      */
     setSelector(selector: SelectorComponent["selector"] = ""): this {
         this.selector = selector;
@@ -37,7 +37,7 @@ export class SelectorComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Entity_Names | Entity Names}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Entity_Names | Entity Names}
      */
     setSeparator(separator?: SelectorComponent["separator"]): this {
         this.separator = separator;
@@ -71,7 +71,7 @@ export class SelectorComponent extends BaseComponent {
  *
  * @return SelectorComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Entity_Names | Entity Names}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Entity_Names | Entity Names}
  */
 export function selector(selector: SelectorComponent["selector"]): SelectorComponent {
     return new SelectorComponent({

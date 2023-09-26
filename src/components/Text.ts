@@ -19,7 +19,7 @@ export class TextComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Translated_Text | Plain Text}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Translated_Text | Plain Text}
      */
     setText(text: TextComponent["text"]): this {
         this.text = text;
@@ -36,7 +36,7 @@ export class TextComponent extends BaseComponent {
  *
  * @return TextComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Plain_Text | Plain Text}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Plain_Text | Plain Text}
  */
 export function text(text: TextComponent["text"], color?: BaseComponent["color"]): TextComponent {
     return new TextComponent({

@@ -27,7 +27,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setNBT(nbt: NBTComponent["nbt"] = ""): this {
         this.nbt = nbt;
@@ -42,7 +42,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setInterpret(interpret: NBTComponent["interpret"] = true): this {
         this.interpret = interpret;
@@ -57,7 +57,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setBlock(block?: NBTComponent["block"]): this {
         this.block = block;
@@ -72,7 +72,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setEntity(entity?: NBTComponent["entity"]): this {
         this.entity = entity;
@@ -87,7 +87,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setStorage(storage?: NBTComponent["storage"]): this {
         this.storage = storage;
@@ -102,7 +102,7 @@ export class NBTComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
      */
     setSeparator(separator?: NBTComponent["separator"]): this {
         this.separator = separator;
@@ -164,7 +164,7 @@ export class NBTComponent extends BaseComponent {
  *
  * @return NBTComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#NBT_Values | NBT Values}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#NBT_Values | NBT Values}
  */
 export function nbt(nbt: NBTComponent["nbt"], interpret?: NBTComponent["interpret"]): NBTComponent {
     return new NBTComponent({

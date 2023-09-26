@@ -28,7 +28,7 @@ export class ScoreComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
      */
     setName(name: IScore["name"] = ""): this {
         this.score.name = name;
@@ -43,7 +43,7 @@ export class ScoreComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
      */
     setObjective(objective: IScore["objective"] = ""): this {
         this.score.objective = objective;
@@ -58,7 +58,7 @@ export class ScoreComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
      */
     setValue(value?: IScore["value"]): this {
         this.score.value = value;
@@ -103,7 +103,7 @@ export class ScoreComponent extends BaseComponent {
  *
  * @return ScoreComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Scoreboard_Value | Scoreboard Value}
  */
 export function score(name: IScore["name"], objective: IScore["objective"], value?: IScore["value"]): ScoreComponent {
     return new ScoreComponent({
