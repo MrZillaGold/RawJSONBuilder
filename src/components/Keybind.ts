@@ -19,7 +19,7 @@ export class KeybindComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Keybind | Keybind}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Keybind | Keybind}
      */
     setKeybind(keybind: KeybindComponent["keybind"] = ""): this {
         this.keybind = keybind;
@@ -35,7 +35,7 @@ export class KeybindComponent extends BaseComponent {
  *
  * @return KeybindComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Keybind | Keybind}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Keybind | Keybind}
  */
 export function keybind(keybind: KeybindComponent["keybind"]): KeybindComponent {
     return new KeybindComponent({

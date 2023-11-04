@@ -25,7 +25,7 @@ export class TranslateComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Translated_Text | Translated Text}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Translated_Text | Translated Text}
      */
     setTranslate(translate: TranslateComponent["translate"] = ""): this {
         this.translate = translate;
@@ -40,7 +40,7 @@ export class TranslateComponent extends BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Translated_Text | Translated Text}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Translated_Text | Translated Text}
      */
     addWith(withTranslate: TranslateComponent["with"] | TranslateComponent["with"][number]): this {
         this.with = this.with.concat(withTranslate);
@@ -68,7 +68,7 @@ export class TranslateComponent extends BaseComponent {
  *
  * @return TranslateComponent
  *
- * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Translated_Text | Translated Text}
+ * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Translated_Text | Translated Text}
  */
 export function translate(translate: TranslateComponent["translate"], withTranslate?: TranslateComponent["with"]): TranslateComponent {
     const component = new TranslateComponent({

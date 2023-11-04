@@ -169,7 +169,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setColor(color?: BaseComponent["color"]): this {
         this.color = color;
@@ -184,7 +184,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setFont(font?: BaseComponent["font"]): this {
         this.font = font;
@@ -199,7 +199,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setBold(bold: BaseComponent["bold"] = true): this {
         this.bold = bold;
@@ -214,7 +214,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setItalic(italic: BaseComponent["italic"] = true): this {
         this.italic = italic;
@@ -229,7 +229,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setUnderlined(underlined: BaseComponent["underlined"] = true): this {
         this.underlined = underlined;
@@ -244,7 +244,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setStrikethrough(strikethrough: BaseComponent["strikethrough"] = true): this {
         this.strikethrough = strikethrough;
@@ -259,7 +259,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setObfuscated(obfuscated: BaseComponent["obfuscated"] = true): this {
         this.obfuscated = obfuscated;
@@ -274,7 +274,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setInsertion(insertion: BaseComponent["insertion"]): this {
         this.insertion = insertion;
@@ -289,7 +289,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setClickEvent(event?: BaseComponent["clickEvent"]): this {
         this.clickEvent = event;
@@ -304,7 +304,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     setHoverEvent(event?: BaseComponent["hoverEvent"]): this {
         this.hoverEvent = event;
@@ -400,7 +400,7 @@ export class BaseComponent {
      *
      * @return Current component context
      *
-     * @see {@link https://minecraft.fandom.com/wiki/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
+     * @see {@link https://minecraft.wiki/w/Raw_JSON_text_format#Java_Edition | Raw JSON text format}
      */
     addExtra(extra: Exclude<BaseComponent["extra"], undefined> | Exclude<BaseComponent["extra"], undefined>[number]): this {
         if (!this.extra) {
